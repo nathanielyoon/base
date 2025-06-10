@@ -1,3 +1,8 @@
+/**
+ * Base16 (hexadecimal) encoding and decoding, and parsing for rougher inputs.
+ * @module
+ */
+
 const BIN = new Uint8Array(256), HEX = Array<string>(256);
 for (let z = 0; z < 16; ++z) BIN[z.toString(16).charCodeAt(0)] = z;
 for (let z = 0; z < 256; ++z) HEX[z] = z.toString(16).padStart(2, "0");

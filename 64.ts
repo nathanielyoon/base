@@ -1,3 +1,9 @@
+/**
+ * Base64 encoding and decoding, with constants from
+ * [ConstTimeEncoding](https://github.com/Sc00bz/ConstTimeEncoding).
+ * @module
+ */
+
 const en64 = ($: number) =>
   $ + 65 + (25 - $ >> 8 & 6) - (51 - $ >> 8 & 75) - (61 - $ >> 8 & 13) +
   (62 - $ >> 8 & 49);
