@@ -6,7 +6,7 @@ const de64 = ($: number) =>
   ((45 - $ & $ - 58) >> 8 & $ + 5) + ((44 - $ & $ - 46) >> 8 & 63) +
   ((94 - $ & $ - 96) >> 8 & 64) - 1;
 /** Encodes binary to base64. */
-export const b_s64 = ($: Uint8Array) => {
+export const b_s64 = ($: Uint8Array): string => {
   // The `length` parameter only takes integers, so this `+ 0.7` is `Math.ceil`.
   const a = new Uint8Array($.length / 3 * 4 + 0.7);
   for (let z = 0, y = 0, b, c, d; z < $.length;) {
@@ -17,7 +17,7 @@ export const b_s64 = ($: Uint8Array) => {
   return new TextDecoder().decode(a);
 };
 /** Decodes binary from base64. */
-export const s64_b = ($: string) => {
+export const s64_b = ($: string): Uint8Array => {
   const a = new Uint8Array($.length * 3 >> 2), b = $.charCodeAt.bind($);
   for (let z = 0, y = 0, c, d, e, f; z < $.length;) {
     c = de64(b(z++)), d = de64(b(z++)), e = de64(b(z++)), f = de64(b(z++));
