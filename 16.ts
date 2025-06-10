@@ -13,6 +13,7 @@ export const s16_b = ($: string): Uint8Array => {
   for (let z = 0; z < $.length;) a[z >> 1] = BIN[b(z++)] << 4 | BIN[b(z++)];
   return a;
 };
+/** Forgivingly parses binary from base16. */
 export const hex = ($: string): Uint8Array =>
   Uint8Array.from(
     $.match(
