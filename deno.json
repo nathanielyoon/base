@@ -2,7 +2,10 @@
   "$schema": "https://raw.githubusercontent.com/denoland/deno/refs/heads/main/cli/schemas/config-file.v1.json",
   "name": "@nyoon/base",
   "version": "1.0.0",
-  "exports": "./mod.ts",
+  "exports": {
+    "./16": "./16.ts",
+    "./64": "./64.ts"
+  },
   "lint": {
     "rules": {
       "tags": ["recommended"],
