@@ -1,6 +1,6 @@
-import { b_s16, hex, s16_b } from "@nyoon/base/16";
-import { b_s64, s64_b } from "@nyoon/base/64";
 import { assertEquals } from "@std/assert";
+import { b_s16, hex, s16_b } from "./16.ts";
+import { b_s64, s64_b } from "./64.ts";
 
 const rfc = await fetch("https://www.rfc-editor.org/rfc/rfc4648.txt")
   .then(($) => $.text());
