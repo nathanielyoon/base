@@ -8,6 +8,9 @@ Deno.test("rfc", () => {
     .forEach(([_, ascii, base16]) => {
       const binary = new TextEncoder().encode(ascii);
       assertEquals(b_s16(binary), base16.toLowerCase());
+      assertEquals(s16_b(base16), binary);
+      assertEquals(s16_b(base16.toLowerCase()), binary);
+      assertEquals(hex(base16), binary);
       assertEquals(hex(base16.toLowerCase()), binary);
     });
   rfc.slice(25710, 25906).matchAll(/^ {3}BASE64\("(\w*)"\) = "(\w*)"/gm)
