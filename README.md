@@ -6,7 +6,7 @@ Encode and decode binary data ([RFC 4648](https://rfc-editor.org/rfc/rfc4648)).
 
 ```ts
 import { b_s16, hex, s16_b } from "@nyoon/base/16";
-import { assertEquals, assertMatch } from "@std/assert";
+import { assertEquals, assertMatch } from "jsr:@std/assert@^1.0.13";
 
 const binary = crypto.getRandomValues(new Uint8Array(32));
 const base16 = b_s16(binary);
