@@ -23,7 +23,7 @@ assertEquals(
 
 ```ts
 import { b_s64, s64_b } from "@nyoon/base/64";
-import { assertEquals, assertMatch } from "@std/assert";
+import { assertEquals, assertMatch } from "jsr:@std/assert@^1.0.13";
 
 const binary = crypto.getRandomValues(new Uint8Array(32));
 const base64url = b_s64(binary);
