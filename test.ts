@@ -1,4 +1,4 @@
-import { assertEquals } from "@std/assert";
+import { assertEquals } from "jsr:@std/assert@^1.0.13";
 import { b_s16, hex, s16_b } from "./16.ts";
 import { b_s64, s64_b } from "./64.ts";
 
