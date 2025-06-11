@@ -1,5 +1,5 @@
 import { assertEquals } from "jsr:@std/assert@^1.0.13";
-import { b_s16, b_s64, hex, s16_b, s64_b } from "./mod.ts";
+import { b_s, b_s16, b_s64, hex, s16_b, s64_b, s_b } from "./mod.ts";
 
 const rfc = await fetch("https://www.rfc-editor.org/rfc/rfc4648.txt")
   .then(($) => $.text());
@@ -26,4 +26,5 @@ Deno.test("same", () =>
   ].forEach(($) => {
     assertEquals(s16_b(b_s16($)), $);
     assertEquals(s64_b(b_s64($)), $);
+    assertEquals(b_s(s_b(`${$}`)), `${$}`);
   }));
